@@ -16,5 +16,5 @@ git commit -m "mensaje"
 git push origin main
 ```
 
->Insertar imagen
+>Developer
 ![titulo](https://i.pinimg.com/736x/30/ff/a5/30ffa50b9515128345d999d3fbd73961.jpg)

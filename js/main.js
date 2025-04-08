@@ -79,11 +79,22 @@ function modifica(){
 }
 
 
+///////////////////////////////////////////////////////////////////////////////////////////////////////
 
-
-
-btnMostrar.addEventListener("click", function(event){
-    event.preventDefault();
-    console.log("boton btnModificar presionado");
-});
 //.addEventListener - agregar "escuchador de eventos" como un click
+btnMostrar.addEventListener("click", function(event){
+    event.preventDefault();  // no hagas lo que haces por defecto.
+
+    //.createElement permite crear cualquier elemento 
+    let element = document.createElement("li");
+    element.innerText="Another item"; // <li>Another item</li>
+    element.classList.add("list-group-item");
+
+    let element2 = element.cloneNode(true);
+
+
+    // listas.item(0).before(element);
+    // listas.item(0).prepend(element2);
+    listas.item(0).append(element);
+    listas.item(0).after(element2);
+});
