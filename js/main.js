@@ -1,31 +1,3 @@
-// // console.log (document.getElementById("encabezado1"));
-
-
-// let encabezado1 = document.getElementById("encabezado1");
-// let encabezado2 = document.getElementById("encabezado2");
-// let listas = document.getElementsByName("ul");
-
-// let elementos = document.getElementsByClassName("list-group-item");
-
-// console.log(listas.leght)
-
-// let contador=0
-// function modifica(){
-
-//     // encabezado1.innerText = "<em>Ejercicio</em> DOM";
-//     encabezado1.innerHTML += "<em>Ejercicio</em> DOM";
-//     encabezado2.innerText = ++contador;
-// } // modifica
-
-
-
-// // console.log(encabezado1.innerText);
-
-////////////////////////////////////////////////////////////////////////////////////////////////
-
-
-
-
 
 //document palabra reservada que hace referencia al DOM de la pagina
 //.getElementById para acceder al elemento por el identificador declarado en el HTML
@@ -52,6 +24,10 @@ let otrosElementos = document.querySelectorAll("ul>li"); //todos
 //Regresa una coleccion estatica (no viva) de las coindidencias del selector escrito
 
 let btnMostrar = document.getElementById("btnMostrar");
+
+let txtRFC = document.getElementById("txtRFC");
+let txtCURP = document.getElementById("txtCURP");
+let txtTelefono = document.getElementById("txtTelefono");
 
 
 
@@ -118,3 +94,34 @@ listas.item(1).insertAdjacentHTML("beforeend",
 
     
 });
+
+// // Se ejecuta cuando se termina de cargar todos los elementos de la página
+// window.addEventListener("load",function(event){
+//     console.log("Se terminó de cargar la página");
+// }) //load
+
+// // blur - cuando sale del campo
+// // toUpperCase - convierte valores tipo string a mayusculas
+// txtRFC.addEventListener("blur", function(event){
+//     txtRFC.value = txtRFC.value.toUpperCase();
+// }); //txtRFC
+
+// txtCURP.addEventListener("blur", function(event){
+//     txtCURP.value = txtCURP.value.toUpperCase();
+// }); //txtCURP
+
+// // trim - ignora los espacios en blanco al inicio y al final
+// // slice - extrae del numero indicado hasta antes del que se indique "(0,10)" (0123456789)
+//            convierte el valor en un arreglo y toma los elementos que le indiques
+// txtTelefono.addEventListener("blur",function(event){
+//     txtTelefono.value = txtTelefono.value.trim().slice(0,10);
+// }) // txtTelefono
+
+
+//automatización de eventos aplicable en repeticiones
+function txtToUpper(event){
+    event.preventDefault();
+    event.target.value = event.target.value.trim().toUpperCase();
+} //txtToUpper
+    txtRFC.addEventListener("blur", txtToUpper); // txtRFC
+    txtCURP.addEventListener("blur", txtToUpper); // txtCURP
